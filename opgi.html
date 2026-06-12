@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OPGI DJANET | Office de Promotion et de Gestion Immobilière</title>
+
+<meta name="description"
+      content="Site officiel de l'OPGI de Djanet. Informations sur les logements, les programmes immobiliers, les services administratifs et les actualités de l'Office de Promotion et de Gestion Immobilière de Djanet.">
+
+<meta name="keywords"
+      content="OPGI Djanet, logement Djanet, immobilier Djanet, OPGI Algérie, logement social, promotion immobilière">
+
+<meta name="author" content="OPGI Djanet">
+
+<meta property="og:title"
+      content="OPGI DJANET | Office de Promotion et de Gestion Immobilière">
+
+<meta property="og:description"
+      content="Informations et services de l'OPGI de Djanet.">
+
+<meta property="og:type"
+      content="website">
+
+<meta property="og:url"
+      content="https://www.votredomaine.dz">
+
+<meta name="robots"
+      content="index, follow">
+
+<link rel="canonical"
+      href="https://www.votredomaine.dz/">
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400&display=swap"
+      rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-deep: #0a3d2e;
+    --green-mid: #1a6b4a;
+    --green-bright: #2ea87a;
+    --green-light: #d4f0e4;
+    --gold: #c9943a;
+    --gold-light: #f5e8d0;
+    --white: #fafaf7;
+    --off-white: #f2f0ea;
+    --gray-100: #e8e6e0;
+    --gray-300: #b8b5ac;
+    --gray-600: #6b6860;
+    --gray-900: #1c1b18;
+    --radius: 12px;
+    --radius-lg: 20px;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--gray-900);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAVBAR ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(10, 61, 46, 0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 3px solid rgba(201,148,58,0.2);
+    padding: 0 4%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 100px;
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 14px; text-decoration: none;
+  }
+
+  .nav-logo-icon {
+    width: 42px; height: 42px;
+    background: linear-gradient(135deg, var(--gold), #e8b860);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 700;
+    color: var(--green-deep);
+    letter-spacing: -0.5px;
+    flex-shrink: 0;
+  }
+  .nav-logo-icon img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-right: 20px;
+}
+
+  .nav-logo-text { color: white; }
+  .nav-logo-text strong { display: block; font-size: 20px; font-weight: 600; letter-spacing: 0.5px; }
+  .nav-logo-text span { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.6); letter-spacing: 1px; text-transform: uppercase; }
+
+  .nav-links {
+    display: flex; align-items: center; gap: 6px; list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 7px 14px;
+    border-radius: 8px;
+    transition: var(--transition);
+    letter-spacing: 0.2px;
+  }
+
+  .nav-links a:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+  }
+
+  .nav-cta {
+    background: var(--gold) !important;
+    color: var(--green-deep) !important;
+    font-weight: 600 !important;
+    padding: 8px 18px !important;
+  }
+
+  .nav-cta:hover { background: #d9a840 !important; transform: translateY(-1px); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    background: var(--green-deep);
+    position: relative;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+
+  .hero-bg-pattern {
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 70% 40%, rgba(46,168,122,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 10% 80%, rgba(201,148,58,0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-grid-lines {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  .hero-content {
+    flex: 1;
+    display: flex; align-items: center;
+    padding: 120px 8% 80px;
+    position: relative; z-index: 2;
+    gap: 80px;
+  }
+
+  .hero-text { flex: 1; max-width: 580px; }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(201,148,58,0.15);
+    border: 1px solid rgba(201,148,58,0.35);
+    border-radius: 100px;
+    padding: 6px 16px;
+    margin-bottom: 28px;
+  }
+
+  .hero-badge-dot {
+    width: 10px; height: 10px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.8); }
+  }
+
+  .hero-badge span {
+    font-size: 20px; font-weight: 500;
+    color: var(--gold);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 5.5vw, 66px);
+    font-weight: 700;
+    color: white;
+    line-height: 1.08;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+  }
+
+  .hero-title em {
+    font-style: normal;
+    color: var(--gold);
+    position: relative;
+    display: inline-block;
+  }
+
+  .hero-title em::after {
+    content: '';
+    position: absolute;
+    bottom: 4px; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+    opacity: 0.3;
+    border-radius: 2px;
+  }
+
+  .hero-subtitle {
+    font-size: 17px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    margin-bottom: 42px;
+    max-width: 480px;
+    font-weight: 300;
+  }
+
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--green-deep);
+    border: none;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: var(--transition);
+    letter-spacing: 0.2px;
+  }
+
+  .btn-primary:hover { background: #d9a840; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,148,58,0.35); }
+
+  .btn-outline {
+    background: transparent;
+    color: rgba(255,255,255,0.85);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: var(--transition);
+  }
+
+  .btn-outline:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.4); }
+
+  .hero-visual {
+    flex: 1;
+    max-width: 460px;
+    position: relative;
+  }
+
+  .hero-stats-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    backdrop-filter: blur(8px);
+  }
+
+  .hero-stats-title {
+    font-size: 12px;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .stat-item { }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-number sup { font-size: 18px; color: var(--gold); }
+
+  .stat-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  .stat-divider {
+    grid-column: span 2;
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+    margin: 4px 0;
+  }
+
+  /* ─── TICKER BAR ─── */
+  .ticker-bar {
+    background: var(--gold);
+    padding: 12px 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .ticker-track {
+    display: flex;
+    animation: ticker 30s linear infinite;
+    white-space: nowrap;
+    width: max-content;
+  }
+
+  .ticker-item {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 0 40px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green-deep);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .ticker-dot { width: 5px; height: 5px; background: var(--green-deep); border-radius: 50%; opacity: 0.4; }
+
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ─── SECTION BASE ─── */
+  section { padding: 100px 8%; }
+
+  .section-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--green-bright);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 700;
+    color: var(--green-deep);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 18px;
+  }
+
+  .section-desc {
+    font-size: 17px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 560px;
+  }
+
+  /* ─── SERVICES ─── */
+  .services-section { background: var(--off-white); }
+
+  .services-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 60px; gap: 40px; flex-wrap: wrap;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .service-card {
+    background: white;
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 36px 30px;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--green-bright);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: var(--transition);
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 48px rgba(10,61,46,0.1);
+    border-color: var(--green-light);
+  }
+
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-icon {
+    width: 52px; height: 52px;
+    background: var(--green-light);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 24px;
+    font-size: 24px;
+  }
+
+  .service-card:nth-child(2) .service-icon { background: #fef3e2; }
+  .service-card:nth-child(3) .service-icon { background: #e8f4fd; }
+  .service-card:nth-child(4) .service-icon { background: #fde8ee; }
+  .service-card:nth-child(5) .service-icon { background: #f0e8fd; }
+  .service-card:nth-child(6) .service-icon { background: #e8fdf0; }
+
+  .service-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--green-deep);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .service-desc {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.65;
+    font-weight: 300;
+    margin-bottom: 22px;
+  }
+
+  .service-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green-bright);
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 6px;
+    letter-spacing: 0.2px;
+    transition: gap 0.2s;
+  }
+
+  .service-card:hover .service-link { gap: 10px; }
+
+  /* ─── QUICK ACCESS ─── */
+  .quick-access {
+    background: var(--green-deep);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .quick-access::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(46,168,122,0.15), transparent);
+    pointer-events: none;
+  }
+
+  .quick-access .section-title { color: white; }
+  .quick-access .section-desc { color: rgba(255,255,255,0.55); }
+  .quick-access .section-label { color: var(--gold); }
+
+  .quick-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 50px;
+  }
+
+  .quick-item {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: block;
+  }
+
+  .quick-item:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(201,148,58,0.4);
+    transform: translateY(-3px);
+  }
+
+  .quick-emoji { font-size: 32px; margin-bottom: 14px; display: block; }
+
+  .quick-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 6px;
+  }
+
+  .quick-sub {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    font-weight: 300;
+  }
+
+  /* ─── PROJECTS ─── */
+  .projects-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 50px; gap: 40px; flex-wrap: wrap;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+  }
+
+  .project-card {
+    background: var(--off-white);
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: var(--transition);
+    cursor: pointer;
+  }
+
+  .project-card:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(10,61,46,0.1); }
+
+  .project-card.featured { grid-row: span 2; }
+
+  .project-img {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-card.featured .project-img { height: 340px; }
+
+  .project-img-bg {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .project-img-pattern {
+    width: 100%; height: 100%;
+  }
+
+  .project-img-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(10,61,46,0.9));
+  }
+
+  .project-badge {
+    position: absolute;
+    top: 16px; left: 16px;
+    background: var(--gold);
+    color: var(--green-deep);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .project-body { padding: 24px; }
+
+  .project-type {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--green-bright);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .project-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--green-deep);
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  .project-card.featured .project-name { font-size: 22px; }
+
+  .project-meta {
+    font-size: 13px;
+    color: var(--gray-600);
+    font-weight: 300;
+  }
+
+  /* ─── NEWS ─── */
+  .news-section { background: var(--off-white); }
+
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 50px;
+  }
+
+  .news-card {
+    background: white;
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: var(--transition);
+    cursor: pointer;
+  }
+
+  .news-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(10,61,46,0.08); }
+
+  .news-card-header {
+    height: 10px;
+    background: var(--green-bright);
+  }
+
+  .news-card:nth-child(2) .news-card-header { background: var(--gold); }
+  .news-card:nth-child(3) .news-card-header { background: #4a9fd4; }
+
+  .news-body { padding: 28px; }
+
+  .news-date {
+    font-size: 12px;
+    color: var(--gray-300);
+    font-weight: 400;
+    margin-bottom: 12px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .news-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--green-deep);
+    line-height: 1.35;
+    margin-bottom: 14px;
+  }
+
+  .news-excerpt {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  /* ─── CONTACT ─── */
+  .contact-section {
+    background: white;
+  }
+
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .contact-info-block { margin-bottom: 36px; }
+
+  .contact-info-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--green-bright);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+  }
+
+  .contact-info-value {
+    font-size: 16px;
+    color: var(--gray-900);
+    font-weight: 400;
+    line-height: 1.55;
+  }
+
+  .contact-form {
+    background: var(--off-white);
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .form-group { margin-bottom: 16px; }
+
+  .form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray-900);
+    margin-bottom: 8px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--gray-100);
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--gray-900);
+    background: white;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--green-bright);
+    box-shadow: 0 0 0 3px rgba(46,168,122,0.1);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 110px; }
+
+  .form-submit {
+    width: 100%;
+    background: var(--green-deep);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    letter-spacing: 0.3px;
+  }
+
+  .form-submit:hover { background: var(--green-mid); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--gray-900);
+    color: rgba(255,255,255,0.6);
+    padding: 70px 8% 32px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 60px;
+  }
+
+  .footer-brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: white;
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+
+  .footer-brand-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 24px;
+  }
+
+  .footer-col-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+
+  .footer-col-links { list-style: none; }
+
+  .footer-col-links li + li { margin-top: 12px; }
+
+  .footer-col-links a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+    transition: color 0.2s;
+  }
+
+  .footer-col-links a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 13px;
+    font-weight: 300;
+  }
+
+  .footer-bottom a { color: var(--gold); text-decoration: none; }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hero-content { flex-direction: column; padding: 100px 6% 60px; gap: 40px; }
+    .hero-visual { max-width: 100%; }
+    .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .project-card.featured { grid-row: auto; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    section { padding: 70px 6%; }
+  }
+
+  @media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ─── SCROLL ANIMATIONS ─── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fade-in:nth-child(2) { transition-delay: 0.1s; }
+  .fade-in:nth-child(3) { transition-delay: 0.2s; }
+  .fade-in:nth-child(4) { transition-delay: 0.3s; }
+  .fade-in:nth-child(5) { transition-delay: 0.4s; }
+  .fade-in:nth-child(6) { transition-delay: 0.5s; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#home" class="nav-logo">
+    <div class="nav-logo-icon"> <img src="img/merged logo.PNG" alt="Logo"></div>
+    <div class="nav-logo-text">
+      <strong>OPGI DJANET</strong>
+      <span>promotion et Gestion Immobilière</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projets">Projets</a></li>
+    <li><a href="#acces-rapide">Espace Citoyen</a></li>
+    <li><a href="#actualites">Actualités</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://sakani.dz/fr/login" class="nav-cta">E-Payment</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        <span>OPGI DJANET — Logement social</span>
+      </div>
+      <h1 class="hero-title">
+        Votre <em>habitat</em>,<br>notre engagement
+      </h1>
+      <p class="hero-subtitle">
+        L'Office de Promotion et de Gestion Immobilière de la willaya de DJANET accompagne les citoyens dans l'accès au logement social, la gestion de patrimoine et les services administratifs de proximité.
+      </p>
+      <div class="hero-actions">
+        <a href="#acces-rapide" class="btn-primary">
+          Accéder aux services
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#projets" class="btn-outline">
+          Nos projets →
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-stats-card">
+        <p class="hero-stats-title">Chiffres clés </p>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">2983<sup>+</sup></div>
+            <div class="stat-label">Logements gérés</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">10<sup>+</sup></div>
+            <div class="stat-label">Projets actifs</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-number">01<sup>S</sup></div>
+            <div class="stat-label">unité/Caisse</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">24<sup>h</sup></div>
+            <div class="stat-label">Délai réponse</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-bar" aria-hidden="true">
+  <div class="ticker-track" id="ticker">
+   
+    <span class="ticker-item">📅 Appel d'offres <span class="ticker-dot"></span></span>
+    <span class="ticker-item">📋 Mise à jour du fichier locataires<span class="ticker-dot"></span></span>
+   
+    <span class="ticker-item">💳 Paiement des loyers en ligne disponible<span class="ticker-dot"></span></span>
+    <span class="ticker-item">📢 Jours de réception : mardi et mercredi, de 09h00 à 15h00.<span class="ticker-dot"></span></span>
+    <span class="ticker-item">📅 Appel d'offres <span class="ticker-dot"></span></span>
+    <span class="ticker-item">📋 Mise à jour du fichier locataires<span class="ticker-dot"></span></span>
+   
+    <span class="ticker-item">💳 Paiement des loyers en ligne disponible<span class="ticker-dot"></span></span>
+    <span class="ticker-item">📢 Jours de réception : mardi et mercredi, de 09h00 à 15h00.<span class="ticker-dot"></span></span>
+   
+    <span class="ticker-item">📅 Appel d'offres — Tranche 12<span class="ticker-dot"></span></span>
+    <span class="ticker-item">📋 Mise à jour du fichier locataires<span class="ticker-dot"></span></span>
+    
+    <span class="ticker-item">💳 Paiement des loyers en ligne disponible<span class="ticker-dot"></span></span>
+    <<span class="ticker-item">📢 Jours de réception : mardi et mercredi, de 09h00 à 15h00.<span class="ticker-dot"></span></span>
+   
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="services-header">
+    <div>
+      <p class="section-label">Nos prestations</p>
+      <h2 class="section-title">Services aux citoyens</h2>
+    </div>
+    <p class="section-desc">Un ensemble complet de services administratifs, techniques et sociaux pour accompagner chaque citoyen.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card fade-in">
+      <div class="service-icon">🏠</div>
+      <h3 class="service-title">Logement social</h3>
+      <p class="service-desc">Accès aux programmes LPL,  Dépôt de dossier, suivi d'attribution et prise en charge complète.</p>
+      <!-- <a href="#" class="service-link">En savoir plus →</a> -->
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon">💰</div>
+      <h3 class="service-title">Paiement en ligne</h3>
+      <p class="service-desc">Réglez votre loyer et vos charges directement depuis votre espace en ligne, 24h/24 et 7j/7 en toute sécurité.</p>
+      <a href="https://sakani.dz/fr/login" class="service-link">Accéder →</a>
+    </div>
+    <!-- <div class="service-card fade-in">
+      <div class="service-icon">📋</div>
+      <h3 class="service-title">Appels d'offres</h3>
+      <p class="service-desc">Consultez les marchés publics en cours, téléchargez les cahiers des charges et soumettez vos offres.</p>
+      <a href="#" class="service-link">Voir les appels →</a>
+    </div> -->
+    <div class="service-card fade-in">
+      <div class="service-icon">📅</div>
+      <h3 class="service-title">Prise de rendez-vous</h3>
+      <p class="service-desc">Prenez rendez-vous en téléchargeant l’application Sakani. Vous y trouverez toutes les informations nécessaires pour réserver un rendez-vous avec nos services.</p>
+      <a href="#contact" class="service-link">Prendre RDV →</a>
+    </div>
+    
+    <div class="service-card fade-in">
+      <div class="service-icon">📁</div>
+      <h3 class="service-title">Réclamations</h3>
+      <p class="service-desc">Déposez et suivez vos réclamations en ligne via l’application Sakani. Téléchargez l’application pour soumettre votre réclamation et bénéficier d’une transparence totale sur l’état de traitement de votre dossier.
+</p>
+      <!-- <a href="#" class="service-link">Déposer →</a> -->
+    </div>
+  </div>
+</section>
+
+<!-- QUICK ACCESS -->
+<section class="quick-access" id="acces-rapide">
+  <div style="position: relative; z-index: 2;">
+    <p class="section-label">Espace citoyen</p>
+    <h2 class="section-title">Accès rapide</h2>
+    <p class="section-desc">Retrouvez directement les démarches les plus fréquentes.</p>
+    <div class="quick-grid">
+      <!-- <a href="#" class="quick-item">
+        <span class="quick-emoji">🔍</span>
+        <div class="quick-title">Suivre mon dossier</div>
+        <div class="quick-sub">Logement / Attribution</div>
+      </a> -->
+      <a href="https://sakani.dz/fr/login" class="quick-item">
+        <span class="quick-emoji">🏷️</span>
+        <div class="quick-title">Payer mon loyer</div>
+        <div class="quick-sub">Paiement sécurisé</div>
+      </a>
+      <!-- <a href="#" class="quick-item">
+        <span class="quick-emoji">📄</span>
+        <div class="quick-title">Télécharger un document</div>
+        <div class="quick-sub">Attestations & quittances</div>
+      </a> -->
+      <a href="#" class="quick-item">
+        <span class="quick-emoji">📢</span>
+        <div class="quick-title">Réclamation</div>
+        <div class="quick-sub">Déposer & suivre</div>
+      </a>
+      <a href="#" class="quick-item">
+        <span class="quick-emoji">🏗️</span>
+        <div class="quick-title">Appels d'offres</div>
+        <div class="quick-sub">Marchés en cours</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projets" style="background: white;">
+  <div class="projects-header">
+    <div>
+      <p class="section-label">Réalisations</p>
+      <h2 class="section-title">Nos projets</h2>
+    </div>
+    <a href="#" class="btn-primary" style="background: var(--green-deep); color: white; font-size: 14px; padding: 11px 22px;">
+      Retour à l'accueil
+    </a>
+  </div>
+  <section class="projects-section">
+  <div class="projects-grid">
+    <div class="project-card featured">
+      <div class="project-img">
+        <div class="project-img-bg">
+          <svg class="project-img-pattern" viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg">
+            <rect width="500" height="380" fill="#1a6b4a"/>
+            <rect x="40" y="120" width="80" height="200" rx="4" fill="#0a3d2e"/>
+            <rect x="55" y="105" width="50" height="20" rx="2" fill="#0a3d2e"/>
+            <rect x="60" y="140" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="82" y="140" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="60" y="170" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="82" y="170" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="60" y="200" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="82" y="200" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.5"/>
+            <rect x="140" y="80" width="100" height="240" rx="4" fill="#0f4d36"/>
+            <rect x="155" y="65" width="70" height="20" rx="2" fill="#0a3d2e"/>
+            <rect x="158" y="100" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="184" y="100" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="210" y="100" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="158" y="135" width="18" height="25" rx="2" fill="#c9943a" opacity="0.5"/>
+            <rect x="184" y="135" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="210" y="135" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="158" y="170" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="184" y="170" width="18" height="25" rx="2" fill="#c9943a" opacity="0.5"/>
+            <rect x="210" y="170" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="260" y="100" width="90" height="220" rx="4" fill="#0a3d2e"/>
+            <rect x="370" y="140" width="70" height="180" rx="4" fill="#0f4d36"/>
+            <rect x="450" y="160" width="50" height="160" rx="4" fill="#0a3d2e"/>
+            <rect x="0" y="318" width="500" height="62" fill="#083328"/>
+            <rect x="0" y="308" width="500" height="12" fill="#c9943a" opacity="0.3"/>
+            <circle cx="80" cy="290" r="18" fill="#2ea87a" opacity="0.4"/>
+            <circle cx="200" cy="275" r="22" fill="#2ea87a" opacity="0.3"/>
+            <circle cx="340" cy="285" r="16" fill="#2ea87a" opacity="0.35"/>
+          </svg>
+        </div>
+        <div class="project-img-overlay"></div>
+        <span class="project-badge" style="background: #4a9fd4; color: white;">Livré</span>
+        <!-- <span class="project-badge">En cours</span> -->
+      </div>
+      <div class="project-body">
+        <p class="project-type">Programme LPL</p>
+        <h3 class="project-name">PROJET 100 logt LPL POS 14 - programme 2021</h3>
+        <!-- <p class="project-meta">Livraison prévue : T3 2026 · Wilaya Chef-lieu</p> -->
+      </div>
+    </div>
+    <div class="projects-grid">
+    <div class="project-card featured">
+      <div class="project-img">
+        <div class="project-img-bg">
+          <svg class="project-img-pattern" viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg">
+            <rect width="500" height="380" fill="#1a6b4a"/>
+            <rect x="40" y="120" width="80" height="200" rx="4" fill="#0a3d2e"/>
+            <rect x="55" y="105" width="50" height="20" rx="2" fill="#0a3d2e"/>
+            <rect x="60" y="140" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="82" y="140" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="60" y="170" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="82" y="170" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="60" y="200" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="82" y="200" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.5"/>
+            <rect x="140" y="80" width="100" height="240" rx="4" fill="#0f4d36"/>
+            <rect x="155" y="65" width="70" height="20" rx="2" fill="#0a3d2e"/>
+            <rect x="158" y="100" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="184" y="100" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="210" y="100" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="158" y="135" width="18" height="25" rx="2" fill="#c9943a" opacity="0.5"/>
+            <rect x="184" y="135" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="210" y="135" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="158" y="170" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="184" y="170" width="18" height="25" rx="2" fill="#c9943a" opacity="0.5"/>
+            <rect x="210" y="170" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="260" y="100" width="90" height="220" rx="4" fill="#0a3d2e"/>
+            <rect x="370" y="140" width="70" height="180" rx="4" fill="#0f4d36"/>
+            <rect x="450" y="160" width="50" height="160" rx="4" fill="#0a3d2e"/>
+            <rect x="0" y="318" width="500" height="62" fill="#083328"/>
+            <rect x="0" y="308" width="500" height="12" fill="#c9943a" opacity="0.3"/>
+            <circle cx="80" cy="290" r="18" fill="#2ea87a" opacity="0.4"/>
+            <circle cx="200" cy="275" r="22" fill="#2ea87a" opacity="0.3"/>
+            <circle cx="340" cy="285" r="16" fill="#2ea87a" opacity="0.35"/>
+          </svg>
+        </div>
+        <div class="project-img-overlay"></div>
+        <span class="project-badge" style="background: #4a9fd4; color: white;">Livré</span>
+        <!-- <span class="project-badge">En cours</span> -->
+      </div>
+      <div class="project-body">
+        <p class="project-type">Programme LPL</p>
+        <h3 class="project-name">PROJET 100 logt LPL POS 13 - programme 2021</h3>
+        <!-- <p class="project-meta">Livraison prévue : T3 2026 · Wilaya Chef-lieu</p> -->
+      </div>
+    </div>
+
+    <div class="projects-grid">
+    <div class="project-card featured">
+      <div class="project-img">
+        <div class="project-img-bg">
+          <svg class="project-img-pattern" viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg">
+            <rect width="500" height="380" fill="#1a6b4a"/>
+            <rect x="40" y="120" width="80" height="200" rx="4" fill="#0a3d2e"/>
+            <rect x="55" y="105" width="50" height="20" rx="2" fill="#0a3d2e"/>
+            <rect x="60" y="140" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="82" y="140" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="60" y="170" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="82" y="170" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="60" y="200" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="82" y="200" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.5"/>
+            <rect x="140" y="80" width="100" height="240" rx="4" fill="#0f4d36"/>
+            <rect x="155" y="65" width="70" height="20" rx="2" fill="#0a3d2e"/>
+            <rect x="158" y="100" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="184" y="100" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="210" y="100" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="158" y="135" width="18" height="25" rx="2" fill="#c9943a" opacity="0.5"/>
+            <rect x="184" y="135" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="210" y="135" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="158" y="170" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="184" y="170" width="18" height="25" rx="2" fill="#c9943a" opacity="0.5"/>
+            <rect x="210" y="170" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="260" y="100" width="90" height="220" rx="4" fill="#0a3d2e"/>
+            <rect x="370" y="140" width="70" height="180" rx="4" fill="#0f4d36"/>
+            <rect x="450" y="160" width="50" height="160" rx="4" fill="#0a3d2e"/>
+            <rect x="0" y="318" width="500" height="62" fill="#083328"/>
+            <rect x="0" y="308" width="500" height="12" fill="#c9943a" opacity="0.3"/>
+            <circle cx="80" cy="290" r="18" fill="#2ea87a" opacity="0.4"/>
+            <circle cx="200" cy="275" r="22" fill="#2ea87a" opacity="0.3"/>
+            <circle cx="340" cy="285" r="16" fill="#2ea87a" opacity="0.35"/>
+          </svg>
+        </div>
+        <div class="project-img-overlay"></div>
+        <span class="project-badge" style="background: #4a9fd4; color: white;">Livré</span>
+        <!-- <span class="project-badge">En cours</span> -->
+      </div>
+      <div class="project-body">
+        <p class="project-type">Programme LPL</p>
+        <h3 class="project-name">PROJET 50 logt LPL POS 14 - programme 2021</h3>
+        <!-- <p class="project-meta">Livraison prévue : T3 2026 · Wilaya Chef-lieu</p> -->
+      </div>
+    </div>
+
+    <div class="projects-grid">
+    <div class="project-card featured">
+      <div class="project-img">
+        <div class="project-img-bg">
+          <svg class="project-img-pattern" viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg">
+            <rect width="500" height="380" fill="#1a6b4a"/>
+            <rect x="40" y="120" width="80" height="200" rx="4" fill="#0a3d2e"/>
+            <rect x="55" y="105" width="50" height="20" rx="2" fill="#0a3d2e"/>
+            <rect x="60" y="140" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="82" y="140" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="60" y="170" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="82" y="170" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="60" y="200" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="82" y="200" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.5"/>
+            <rect x="140" y="80" width="100" height="240" rx="4" fill="#0f4d36"/>
+            <rect x="155" y="65" width="70" height="20" rx="2" fill="#0a3d2e"/>
+            <rect x="158" y="100" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="184" y="100" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="210" y="100" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="158" y="135" width="18" height="25" rx="2" fill="#c9943a" opacity="0.5"/>
+            <rect x="184" y="135" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="210" y="135" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="158" y="170" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="184" y="170" width="18" height="25" rx="2" fill="#c9943a" opacity="0.5"/>
+            <rect x="210" y="170" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="260" y="100" width="90" height="220" rx="4" fill="#0a3d2e"/>
+            <rect x="370" y="140" width="70" height="180" rx="4" fill="#0f4d36"/>
+            <rect x="450" y="160" width="50" height="160" rx="4" fill="#0a3d2e"/>
+            <rect x="0" y="318" width="500" height="62" fill="#083328"/>
+            <rect x="0" y="308" width="500" height="12" fill="#c9943a" opacity="0.3"/>
+            <circle cx="80" cy="290" r="18" fill="#2ea87a" opacity="0.4"/>
+            <circle cx="200" cy="275" r="22" fill="#2ea87a" opacity="0.3"/>
+            <circle cx="340" cy="285" r="16" fill="#2ea87a" opacity="0.35"/>
+          </svg>
+        </div>
+        <div class="project-img-overlay"></div>
+       <span class="project-badge" style="background: #4a9fd4; color: white;">Livré</span>
+      </div>
+      <div class="project-body">
+        <p class="project-type">Programme LPL</p>
+        <h3 class="project-name">PROJET 50 logt BORDJ EL HAOUAS LPL - programme 2021</h3>
+        <!-- <p class="project-meta">Livraison prévue : T3 2026 · Wilaya Chef-lieu</p> -->
+      </div>
+    </div>
+
+    <div class="projects-grid">
+    <div class="project-card featured">
+      <div class="project-img">
+        <div class="project-img-bg">
+          <svg class="project-img-pattern" viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg">
+            <rect width="500" height="380" fill="#1a6b4a"/>
+            <rect x="40" y="120" width="80" height="200" rx="4" fill="#0a3d2e"/>
+            <rect x="55" y="105" width="50" height="20" rx="2" fill="#0a3d2e"/>
+            <rect x="60" y="140" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="82" y="140" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="60" y="170" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="82" y="170" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="60" y="200" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.7"/>
+            <rect x="82" y="200" width="15" height="20" rx="2" fill="#2ea87a" opacity="0.5"/>
+            <rect x="140" y="80" width="100" height="240" rx="4" fill="#0f4d36"/>
+            <rect x="155" y="65" width="70" height="20" rx="2" fill="#0a3d2e"/>
+            <rect x="158" y="100" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="184" y="100" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="210" y="100" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="158" y="135" width="18" height="25" rx="2" fill="#c9943a" opacity="0.5"/>
+            <rect x="184" y="135" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="210" y="135" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="158" y="170" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="184" y="170" width="18" height="25" rx="2" fill="#c9943a" opacity="0.5"/>
+            <rect x="210" y="170" width="18" height="25" rx="2" fill="#2ea87a" opacity="0.6"/>
+            <rect x="260" y="100" width="90" height="220" rx="4" fill="#0a3d2e"/>
+            <rect x="370" y="140" width="70" height="180" rx="4" fill="#0f4d36"/>
+            <rect x="450" y="160" width="50" height="160" rx="4" fill="#0a3d2e"/>
+            <rect x="0" y="318" width="500" height="62" fill="#083328"/>
+            <rect x="0" y="308" width="500" height="12" fill="#c9943a" opacity="0.3"/>
+            <circle cx="80" cy="290" r="18" fill="#2ea87a" opacity="0.4"/>
+            <circle cx="200" cy="275" r="22" fill="#2ea87a" opacity="0.3"/>
+            <circle cx="340" cy="285" r="16" fill="#2ea87a" opacity="0.35"/>
+          </svg>
+        </div>
+        <div class="project-img-overlay"></div>
+        <span class="project-badge" style="background: #4a9fd4; color: white;">Livré</span>
+        <!-- <span class="project-badge">En cours</span> -->
+      </div>
+      <div class="project-body">
+        <p class="project-type">Programme LPL</p>
+        <h3 class="project-name">PROJET 50 logt LPL POS 13 - programme 2021</h3>
+        <!-- <p class="project-meta">Livraison prévue : T3 2026 · Wilaya Chef-lieu</p> -->
+      </div>
+    </div>
+
+
+    <div class="project-card">
+      <div class="project-img" style="height: 160px;">
+        <div class="project-img-bg">
+          <svg class="project-img-pattern" viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="160" fill="#c9943a"/>
+            <rect x="20" y="50" width="60" height="100" rx="3" fill="#9a6e28"/>
+            <rect x="90" y="30" width="60" height="120" rx="3" fill="#b08030"/>
+            <rect x="160" y="50" width="50" height="100" rx="3" fill="#9a6e28"/>
+            <rect x="220" y="40" width="60" height="110" rx="3" fill="#b08030"/>
+            <rect x="30" y="62" width="12" height="16" rx="1" fill="#f5e8d0" opacity="0.6"/>
+            <rect x="48" y="62" width="12" height="16" rx="1" fill="#f5e8d0" opacity="0.6"/>
+            <rect x="100" y="45" width="12" height="16" rx="1" fill="#f5e8d0" opacity="0.6"/>
+            <rect x="118" y="45" width="12" height="16" rx="1" fill="#f5e8d0" opacity="0.6"/>
+            <rect x="0" y="140" width="300" height="20" fill="#7a5020"/>
+          </svg>
+        </div>
+        <div class="project-img-overlay"></div>
+       <span class="project-badge">En cours</span> 
+      </div>
+      <div class="project-body">
+        <p class="project-type">Programme LPL</p>
+        <h3 class="project-name">1300 LOGEMENT LPL - Programme 2023/2024</h3>
+        <p class="project-meta">Livré 2026</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img" style="height: 160px;">
+        <div class="project-img-bg">
+          <svg class="project-img-pattern" viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="160" fill="#1a3a5c"/>
+            <rect x="10" y="60" width="50" height="90" rx="3" fill="#102a42"/>
+            <rect x="70" y="40" width="70" height="110" rx="3" fill="#0e2234"/>
+            <rect x="150" y="55" width="55" height="95" rx="3" fill="#102a42"/>
+            <rect x="215" y="45" width="60" height="105" rx="3" fill="#0e2234"/>
+            <rect x="80" y="55" width="14" height="18" rx="1" fill="#4a9fd4" opacity="0.5"/>
+            <rect x="100" y="55" width="14" height="18" rx="1" fill="#4a9fd4" opacity="0.5"/>
+            <rect x="120" y="55" width="14" height="18" rx="1" fill="#4a9fd4" opacity="0.5"/>
+            <rect x="0" y="140" width="300" height="20" fill="#0a1e30"/>
+          </svg>
+        </div>
+        <div class="project-img-overlay"></div>
+        <span class="project-badge" style="background: #6b6860; color: white;">Planifié</span>
+      </div>
+      <div class="project-body">
+        <p class="project-type">Programme LPS</p>
+        <h3 class="project-name">200 LOGEMENT LPL - Programme 2026</h3>
+        <p class="project-meta">Lancement prévu : 2027</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="news-section" id="actualites">
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
+    <div>
+      <p class="section-label">Informations</p>
+      <h2 class="section-title">Actualités</h2>
+    </div>
+    <a href="#" style="font-size: 14px; font-weight: 600; color: var(--green-bright); text-decoration: none;">Toutes les actualités →</a>
+  </div>
+  <div class="news-grid">
+    <div class="news-card fade-in">
+      <div class="news-card-header"></div>
+      <div class="news-body">
+        <p class="news-date">09/06/2026</p>
+        <h3 class="news-title">Dossier de dépôt pour les nouveaux bénéficiaires :</h3>
+        <p class="news-excerpt">
+        • 02 photos d'identité
+        <br/>• 02 copies de la carte nationale d'identité du bénéficiaire et de son conjoint
+        <br/>• 02 extraits de naissance originaux du bénéficiaire et de son conjoint
+        <br/>• 02 certificats de situation familiale et une copie de l'acte de mariage du bénéficiaire
+        <br/>• 02 certificats de célibat ou de non-remariage du bénéficiaire
+        <br/>• 02 certificats de travail ou de non-activité
+        </p>
+      </div>
+    </div>
+    <div class="news-card fade-in">
+      <div class="news-card-header"></div>
+      <div class="news-body">
+        <p class="news-date">09/06/2026</p>
+       
+            <h3 class="news-title">Dossier de cession dans le cadre du décret n° 25-153 :</h3>
+            <p class="news-excerpt">
+            • Demande écrite
+            <br/>• Acte de naissance du locataire (03 exemplaires)
+            <br/>• Copie de la carte nationale d’identité ou du numéro d’identification nationale (03 exemplaires)
+            <br/>• Dernière quittance de paiement des redevances
+            <br/>• Contrat de location
+            <br/>• Acte de naissance du conjoint (03 exemplaires)
+            <br/>• Acte de mariage (02 exemplaires)
+            <br/>• Certificat de célibat (pour les non-mariés)
+            <br/>• Certificat de non-remariage (en cas de divorce ou de décès du conjoint)
+            </p>
+            
+
+      </div>
+    </div>
+    <div class="news-card fade-in">
+      <div class="news-card-header"></div>
+      <div class="news-body">
+        <p class="news-date">14 / 05 / 2026</p>
+        <h3 class="news-title">cession dans le cadre du décret n° 25-153 :</h3>
+        <p class="news-excerpt">Nous informons l’ensemble des locataires des logements publics locatifs occupés avant le 04 août 2022, souhaitant acquérir leurs logements, de bien vouloir se rapprocher du siège de l’Office de Promotion et de Gestion Immobilière (OPGI) de la wilaya de Djanet, munis de leurs dossiers complets, et ce avant le 31 décembre 2026.
+</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <p class="section-label">Nous joindre</p>
+  <h2 class="section-title" style="margin-bottom: 56px;">Contact & Rendez-vous</h2>
+  <div class="contact-inner">
+    <div>
+      <div class="contact-info-block">
+        <p class="contact-info-label">Adresse</p>
+        <p class="contact-info-value">Cité Administrative — 28 Logement IFFRI DJANET<br>Bureau 102, 1er étage</p>
+      </div>
+      <div class="contact-info-block">
+        <p class="contact-info-label">Téléphone</p>
+        <p class="contact-info-value">+213 (0) 30 350 301</p>
+      </div>
+      <div class="contact-info-block">
+        <p class="contact-info-label">Email</p>
+        <p class="contact-info-value">opgidjanet@gmail.com</p>
+      </div>
+      <div class="contact-info-block">
+        <p class="contact-info-label">Horaires d'accueil</p>
+        <p class="contact-info-value">Dim – Jeu : 08h00 → 16h30<br>Fermé Vendredi & Samedi</p>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--green-deep); margin-bottom: 28px; font-weight: 600;">Envoyer un message</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Prénom</label>
+          <input type="text" placeholder="Votre prénom">
+        </div>
+        <div class="form-group">
+          <label>Nom</label>
+          <input type="text" placeholder="Votre nom">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="votre@email.dz">
+      </div>
+      <div class="form-group">
+        <label>Objet</label>
+        <select>
+          <option value="">— Sélectionner un objet —</option>
+          <option>Demande de logement</option>
+          <option>Paiement & loyer</option>
+          <option>Réclamation technique</option>
+          <option>Rendez-vous</option>
+          <option>Appels d'offres</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Décrivez votre demande..."></textarea>
+      </div>
+      <button class="form-submit" type="button">Envoyer le message →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <p class="footer-brand-name">OPGI DJANET</p>
+      <p class="footer-brand-desc">Office de Promotion et de Gestion Immobilière DJANET — Au service des citoyens  pour un accès facile.</p>
+      <div style="display: flex; gap: 10px;">
+        <a href="https://www.facebook.com/p/%D8%AF%D9%8A%D9%88%D8%A7%D9%86-%D8%A7%D9%84%D8%AA%D8%B1%D9%82%D9%8A%D8%A9-%D9%88-%D8%A7%D9%84%D8%AA%D8%B3%D9%8A%D9%8A%D8%B1-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%D9%8A-%D9%84%D9%88%D9%84%D8%A7%D9%8A%D8%A9-%D8%AC%D8%A7%D9%86%D8%AA-61557750359494/" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:rgba(255,255,255,0.08);border-radius:8px;color:rgba(255,255,255,0.5);text-decoration:none;font-size:14px;transition:all 0.2s;" onmouseover="this.style.background='rgba(201,148,58,0.2)';this.style.color='#c9943a'" onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.color='rgba(255,255,255,0.5)'">f</a>
+        <!-- <a href="#" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:rgba(255,255,255,0.08);border-radius:8px;color:rgba(255,255,255,0.5);text-decoration:none;font-size:14px;transition:all 0.2s;" onmouseover="this.style.background='rgba(201,148,58,0.2)';this.style.color='#c9943a'" onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.color='rgba(255,255,255,0.5)'">in</a> -->
+      </div>
+    </div>
+    <div>
+      <p class="footer-col-title">Services</p>
+      <ul class="footer-col-links">
+        <li><a href="#">Logement social</a></li>
+        <li><a href="https://sakani.dz/fr/login">Paiement en ligne</a></li>
+        <li><a href="#">Appels d'offres</a></li>
+        <li><a href="#contact">Réclamations</a></li>
+        <li><a href="#contact">Maintenance</a></li>
+      </ul>
+    </div>
+    <!-- <div>
+      <p class="footer-col-title">Institution</p>
+      <ul class="footer-col-links">
+        <li><a href="#">À propos</a></li>
+        <li><a href="#">Missions</a></li>
+        <li><a href="#">Organigramme</a></li>
+        <li><a href="#">Projets</a></li>
+        <li><a href="#">Textes juridiques</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Citoyens</p>
+      <ul class="footer-col-links">
+        <li><a href="#">Espace locataire</a></li>
+        <li><a href="#">Formulaires</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Actualités</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div> -->
+  <div class="footer-bottom">
+    <span>©  OPGI DJANET — Tous droits réservés</span>
+    <!-- <span><a href="#">Mentions légales</a> · <a href="#">Politique de confidentialité</a></span> -->
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+
+  document.querySelector('.form-submit').addEventListener('click', function() {
+    this.textContent = '✓ Message envoyé !';
+    this.style.background = '#2ea87a';
+    setTimeout(() => { this.textContent = 'Envoyer le message →'; this.style.background = ''; }, 3000);
+  });
+</script>
+</body>
+</html>
