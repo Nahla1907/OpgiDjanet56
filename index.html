@@ -679,9 +679,10 @@
   }
 
   /* ─── CONTACT ─── */
-  .contact-section {
-    background: white;
-  }
+ .contact-section {
+  background: white;
+  padding-bottom: 80px; /* 👈 creates breathing room above footer */
+}
 
   .contact-inner {
     display: grid;
@@ -693,7 +694,7 @@
   .contact-info-block { margin-bottom: 36px; }
 
   .contact-info-label {
-    font-size: 11px;
+    font-size: 20px;
     font-weight: 600;
     color: var(--green-bright);
     text-transform: uppercase;
@@ -774,24 +775,22 @@
   .form-submit:hover { background: var(--green-mid); }
 
   /* ─── FOOTER ─── */
- footer {
+footer {
   background: var(--gray-900);
   color: rgba(255,255,255,0.6);
 
-  width: 100%;
-  margin: 0;
+  width: 100vw;              /* 👈 forces full viewport width */
+  margin-left: calc(-37vw + 35%); /* 👈 escapes centered containers */
+ 
   padding: 50px 8%;
   box-sizing: border-box;
-
-  position: relative;
-  left: 0;
 }
 
   .footer-grid {
     display: grid;
     grid-template-columns: 1.8fr 1fr 1fr 1fr;
     gap: 50px;
-    padding-left: 5px;
+    
   }
 
   .footer-brand-name {
@@ -1461,6 +1460,9 @@
     </iframe>
   </div>
 </div>
+
+ </div>
+</section>
 <!-- FOOTER -->
 <footer>
   <div class="footer-grid">
