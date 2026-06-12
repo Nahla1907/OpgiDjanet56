@@ -624,12 +624,12 @@
   }
 
   /* ─── NEWS ─── */
-  .news-section { background: var(--off-white); }
+  .news-section { background: var(--off-white);  }
 
   .news-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
+    gap: 50px;
     margin-top: 50px;
   }
 
@@ -774,17 +774,24 @@
   .form-submit:hover { background: var(--green-mid); }
 
   /* ─── FOOTER ─── */
-  footer {
-    background: var(--gray-900);
-    color: rgba(255,255,255,0.6);
-    padding: 70px 8% 32px;
-  }
+ footer {
+  background: var(--gray-900);
+  color: rgba(255,255,255,0.6);
+
+  width: 100%;
+  margin: 0;
+  padding: 50px 8%;
+  box-sizing: border-box;
+
+  position: relative;
+  left: 0;
+}
 
   .footer-grid {
     display: grid;
     grid-template-columns: 1.8fr 1fr 1fr 1fr;
     gap: 50px;
-    margin-bottom: 60px;
+    padding-left: 5px;
   }
 
   .footer-brand-name {
@@ -803,12 +810,12 @@
   }
 
   .footer-col-title {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     color: white;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
   }
 
   .footer-col-links { list-style: none; }
