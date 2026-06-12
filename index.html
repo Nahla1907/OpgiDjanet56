@@ -540,11 +540,12 @@
   }
 
   .projects-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 20px;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
 
   .project-card {
     background: var(--off-white);
@@ -1111,7 +1112,7 @@
         <!-- <p class="project-meta">Livraison prévue : T3 2026 · Wilaya Chef-lieu</p> -->
       </div>
     </div>
-    <div class="projects-grid">
+    
     <div class="project-card featured">
       <div class="project-img">
         <div class="project-img-bg">
@@ -1157,7 +1158,7 @@
       </div>
     </div>
 
-    <div class="projects-grid">
+    
     <div class="project-card featured">
       <div class="project-img">
         <div class="project-img-bg">
@@ -1203,7 +1204,7 @@
       </div>
     </div>
 
-    <div class="projects-grid">
+    
     <div class="project-card featured">
       <div class="project-img">
         <div class="project-img-bg">
@@ -1248,7 +1249,7 @@
       </div>
     </div>
 
-    <div class="projects-grid">
+    
     <div class="project-card featured">
       <div class="project-img">
         <div class="project-img-bg">
@@ -1340,7 +1341,7 @@
         <span class="project-badge" style="background: #6b6860; color: white;">Planifié</span>
       </div>
       <div class="project-body">
-        <p class="project-type">Programme LPS</p>
+        <p class="project-type">Programme LPL</p>
         <h3 class="project-name">200 LOGEMENT LPL - Programme 2026</h3>
         <p class="project-meta">Lancement prévu : 2027</p>
       </div>
