@@ -1437,40 +1437,57 @@
         <p class="contact-info-value">Dim – Jeu : 08h00 → 16h30<br>Fermé Vendredi & Samedi</p>
       </div>
     </div>
-    <div class="contact-form">
-      <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--green-deep); margin-bottom: 28px; font-weight: 600;">Envoyer un message</h3>
-      <div class="form-row">
-        <div class="form-group">
-          <label>Prénom</label>
-          <input type="text" placeholder="Votre prénom">
-        </div>
-        <div class="form-group">
-          <label>Nom</label>
-          <input type="text" placeholder="Votre nom">
-        </div>
-      </div>
+    
+    
+
+  <div class="contact-form">
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST"></form>
+    <h3 style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--green-deep); margin-bottom: 28px; font-weight: 600;">
+      Envoyer un message
+    </h3>
+
+    <div class="form-row">
       <div class="form-group">
-        <label>Email</label>
-        <input type="email" placeholder="votre@email.dz">
+        <label>Prénom</label>
+        <input type="text" name="prenom" placeholder="Votre prénom" required>
       </div>
+
       <div class="form-group">
-        <label>Objet</label>
-        <select>
-          <option value="">— Sélectionner un objet —</option>
-          <option>Demande de logement</option>
-          <option>Paiement & loyer</option>
-          <option>Réclamation technique</option>
-          <option>Rendez-vous</option>
-          <option>Appels d'offres</option>
-          <option>Autre</option>
-        </select>
+        <label>Nom</label>
+        <input type="text" name="nom" placeholder="Votre nom" required>
       </div>
-      <div class="form-group">
-        <label>Message</label>
-        <textarea placeholder="Décrivez votre demande..."></textarea>
-      </div>
-      <button class="form-submit" type="button">Envoyer le message →</button>
     </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" name="email" placeholder="votre@email.dz" required>
+    </div>
+
+    <div class="form-group">
+      <label>Objet</label>
+      <select name="objet" required>
+        <option value="">— Sélectionner un objet —</option>
+        <option>Demande de logement</option>
+        <option>Paiement & loyer</option>
+        <option>Réclamation technique</option>
+        <option>Rendez-vous</option>
+        <option>Appels d'offres</option>
+        <option>Autre</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Message</label>
+      <textarea name="message" placeholder="Décrivez votre demande..." required></textarea>
+    </div>
+
+    <button class="form-submit" type="submit">
+      Envoyer le message →
+    </button>
+
+  </div>
+
+</form>
   </div>
 </section>
 
